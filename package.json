@@ -1,0 +1,36 @@
+{
+  "name": "pouch",
+  "version": "1.0.0",
+  "description": "Tests for using pouchdb in browser dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test",
+    "assets": "cp assets/*.* dist/assets/",
+    "styles": "cp src/styles.css dist/styles.css",
+    "server": "http-server -p 8081", 
+    "src": "watchify -d -t babelify -o dist/main.js src/main.js",
+    "watch": "npm run assets & npm run styles & npm run server & npm run src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevekane/pouch.git"
+  },
+  "keywords": [
+    "pouch",
+    "pouchdb"
+  ],
+  "author": "Steve Kane",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stevekane/pouch/issues"
+  },
+  "homepage": "https://github.com/stevekane/pouch#readme",
+  "dependencies": {
+    "pouchdb": "^5.2.1",
+    "relational-pouch": "^1.4.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.4.6",
+    "babelify": "^7.2.0"
+  }
+}
